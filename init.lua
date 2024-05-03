@@ -537,6 +537,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
+        ansiblels = {},
         clangd = {},
         gopls = {},
         pyright = {
@@ -648,7 +649,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        python = { 'isort', 'prettier', 'black' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
